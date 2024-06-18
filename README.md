@@ -79,7 +79,7 @@ In this project, we will mainly use the dataframe, two-dimensional data structur
 Lightningchart is the main library used in the project for creating white blood cell flow chart in Python. It provides a highly customizable graph building tools, including simple XY charts, 3D charts, Bar charts, Spider charts, Map charts. However, this time we will use only XY chart (and Point Series).
 
 ## Loading and Processing Data
-You can find a lot of medical data, including Flow Cytometry for analyzing in Python, at PhysioNet website (https://www.immport.org/shared/) \
+You can find a lot of medical data, including Flow Cytometry for analyzing in Python, at ImmPort website (https://www.immport.org/shared/) \
 Here, you can search for flow cytometry data by using respective keywords, e.g. "flow cytometry white cells"
 
 :exclamation: **Important note:** Unfortunately, the dataset used was created manually from multiple files, thus you may have a trouble finding data for different cells in a single file on ImmPort.
@@ -96,3 +96,18 @@ Thus, the csv looks like this:
 | 0 | 79326.953125  | 54160.35546875 | 3.339982707067524e-10 |
 | 1 | 84336.5703125 | 60048.74609375 | 2.626928410663256e-10 |
 | 2 |               |                |                       |
+
+To extract data from .csv file inside dataframe we need to use `pd.read_csv` function.
+After this, we need to convert dataframe columns to lists.
+```python
+df = pd.read_csv('data/flowcytometry.csv')
+fscs = df['FSC'].tolist()
+sscs = df['SSC'].tolist()
+kde = df['KDE'].tolist()
+```
+Also, it is a good idea to normalize KDE data (change the range from 0 to 1)
+```python
+min_kde = min(kde)
+max_kde = max(kde)
+normalized_kde = [(x - min_kde) / (max_kde - min_kde) for x in kde]
+```
