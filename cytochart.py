@@ -39,4 +39,7 @@ series.set_palette_colors(
     percentage_values=True
 )
 
+chart.get_default_x_axis().set_title("FSC")
+chart.get_default_y_axis().set_title("SSC")
+
 chart.open()
