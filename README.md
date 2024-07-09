@@ -8,7 +8,7 @@ That is why it is important to perform white blood cell analysis, it can help to
 Flow cytometry is a lab test characteristics of cells and other particles. We won't delve into the process a lot as our main focus is visualizing and analyzing white blood cell flow charts. If you are interested, you can follow the links provided below the article. 
 ![Flow Cytometry](md_images/flow_cytometry.jpg) 
 
-There are several types of fow cytometry charts, and the main type of chart to classify cells is SSC(FSC) scatter plot which consists of points on the plane where x is FSC and y is SSC. \
+There are several types of flow cytometry charts, and the main type of chart to classify cells is SSC(FSC) scatter plot which consists of points on the plane where x is FSC and y is SSC. \
 **FSC** (Forward Scatter) detects scatter along the laser and **SSC** (Side Scatter) measures scatter at a 90° angle from the laser. \
 Based on these metrics, it is possible to divide cells into types.
 ## LightningChart Python
